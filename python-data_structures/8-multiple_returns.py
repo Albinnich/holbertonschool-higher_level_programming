@@ -2,5 +2,6 @@
 
 def multiple_returns(sentence):
     tuplex = tuple(sentence)
-    print(len(tuplex))
-    print(tuplex[0])
+    print("Length: " + len(tuplex))
+    print(" - ")
+    print("First character: " + tuplex[0])
