@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    print(len(sentence[0]))
+    tuplex = tuple(sentence)
+    print(len(tuplex))
+    print(tuplex[0])
