@@ -17,10 +17,15 @@ def roman_to_int(roman_string):
     prev_value = 0
 
     for char in reversed(roman_string):
-        value = roman_values.get(char, 0)
+        if char not in roman_values:
+            return 0
+        value = roman_values[char]
 
         if value < prev_value:
             total -= value
         else:
             total += value
+
+        prev_value = value
+
     return total
