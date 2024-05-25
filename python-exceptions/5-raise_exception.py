@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-def raise_exception():
-    raise Exception
-    try:
-        print("Exception has been raised")
-    except Exception:
-        return False
+def raise_exception(value):
+    if type(value) not in [int, float]:
+        raise TypeError
