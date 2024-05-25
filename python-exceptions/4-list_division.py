@@ -18,4 +18,6 @@ def list_division(my_list_1, my_list_2, list_length):
             print("wrong type")
     if len(results) < list_length:
         print("out of range")
+    if a % b != 0:
+        result = 0
     return results
