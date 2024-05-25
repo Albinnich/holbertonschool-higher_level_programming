@@ -13,6 +13,16 @@ class Square:
         __size (int): The size of the square (private).
     """
 
+    def __init__(self, size=0):
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Retrieves the size of square.
+        """
+        return self.__size
+
     @size.setter
     def size(self, value):
         """
@@ -27,25 +37,14 @@ class Square:
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
-    @property
-    def size(self):
-        """
-        Retrieves the size of square.
-        """
-        return self.__size
 
     def area(self):
         """
         Returns area of the square.
         """
         return self.__size ** 2
-
-    def __init__(self, size=0):
-        """
-        Initializes a new Square instance.
-        """
-        self.size = size
