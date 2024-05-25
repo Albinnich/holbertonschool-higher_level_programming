@@ -7,3 +7,5 @@ def safe_print_division(a, b):
         return True
     except Exception:
         return False
+    finally:
+        return result
