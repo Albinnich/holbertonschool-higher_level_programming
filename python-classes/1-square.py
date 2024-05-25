@@ -9,8 +9,8 @@ class Square:
     """
     This is a square class based on 0-square.py
     """
-    
-    def _init_(self, size):
+
+    def __init__(self, size):
         """
         Starts a new Square instance.
 
