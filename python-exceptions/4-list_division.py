@@ -7,6 +7,9 @@ def list_division(my_list_1, my_list_2, list_length):
             a = my_list_1[i] if i < len(my_list_1) else None
             b = my_list_2[i] if i < len(my_list_2) else None
 
+            if a is None or b is None:
+                raise IndexError
+
             if type(a) not in (int, float) or type(b) not in (int, float):
                 print("wrong type")
                 results.append(0)
