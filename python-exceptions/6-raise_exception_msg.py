@@ -2,6 +2,6 @@
 
 def raise_exception_msg(message=""):
     try:
-        undefined variable
+        undefined_variable
     except NameError:
         raise NameError(message)
