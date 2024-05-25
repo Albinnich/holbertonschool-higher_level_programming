@@ -55,7 +55,7 @@ class Square:
         Args:
             size: If equal to 0 prints empty line
         """
-        if size == 0:
+        if self.__size == 0:
             print()
         else:
-            print("#")
+            print("#" * self.__size)
