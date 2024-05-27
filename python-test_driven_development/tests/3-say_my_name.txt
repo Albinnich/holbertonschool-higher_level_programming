@@ -7,8 +7,8 @@ The ''2. Say my name'' module
 >>> say_my_name("Albina", "Ismayilova")
 My name is Albina Ismayilova
 
->>> say_my_name("Bob")
-My name is Bob
+>>> say_my_name("Bob", "Smith")
+My name is Bob Smith
 
 >>> say_my_name(12, "Ismayilova")
 Traceback (most recent call last):
