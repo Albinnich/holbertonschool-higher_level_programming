@@ -5,7 +5,7 @@ The ''2. Say my name'' module
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 >>> say_my_name("Albina", "Ismayilova")
-Albina Ismayilova
+My name is Albina Ismayilova
 
 >>> say_my_name(12, "Ismayilova")
 Traceback (most recent call last):
