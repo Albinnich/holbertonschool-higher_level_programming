@@ -6,7 +6,6 @@
 """
 
 
-
 def say_my_name(first_name, last_name=""):
     """
         say_my_name - This function prints
