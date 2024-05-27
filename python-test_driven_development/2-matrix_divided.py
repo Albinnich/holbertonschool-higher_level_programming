@@ -20,15 +20,6 @@ def matrix_divided(matrix, div):
         TypeError: if matrix is not a list of integers or floats.
         TypeError: if rows in matrix is not of the same size.
     """
-    new_matrix = []
-    for row in matrix:
-        for i, element in enumerate(row):
-            if i < len(row) - 1:
-                print("{:d}".format(element), end=' ')
-            else:
-                print("{:d}".format(element), end='')
-
-    return new_matrix
 
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
@@ -38,3 +29,10 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
+
+    new_matrix = []
+    for row in matrix:
+        new_row = [round(elem / div, 2) for elem in row)
+        new_matrix.append(new_row)
+
+    return new_matrix
