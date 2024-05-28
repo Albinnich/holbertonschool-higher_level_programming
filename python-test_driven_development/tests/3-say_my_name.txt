@@ -10,7 +10,7 @@ My name is Albina Ismayilova
 >>> say_my_name("Heisenberg")
 My name is Heisenberg
 
->>> syname(12)
+>>> say_my_name(12)
 Traceback (most recent call last):
 	...
 TypeError: first_name must be a string
