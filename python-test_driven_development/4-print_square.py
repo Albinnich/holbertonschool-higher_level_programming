@@ -19,4 +19,3 @@ def print_square(size):
         raise TypeError("size must be an integer")
 
     print("#", end='')
-print(" ")
