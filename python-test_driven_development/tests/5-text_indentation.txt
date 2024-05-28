@@ -24,3 +24,6 @@ TypeError: text must be a string
 
 >>> text_indentation(" Leading spaces handled.")
 Leading spaces handled.
+
+>>> text_indentation("No punctuation")
+No punctuation
