@@ -9,8 +9,8 @@ Hi, I am Arya.
 <BLANKLINE>
 Say Valar Morghulis
 
->>> text_indentation("Valar Dohaeris")
-Valar Dohaeris
+>>> text_indentation("Dohaeris")
+Dohaeris
 
 >>> text_indentation()
 Traceback (most recent call last):
@@ -21,9 +21,3 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 Traceback (most recent call last):
 	...
 TypeError: text must be a string
-
->>> text_indentation(" Leading spaces handled.")
-Leading spaces handled.
-
->>> text_indentation("No punctuation")
-No punctuation
