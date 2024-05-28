@@ -8,6 +8,9 @@ The ``3. Print square`` module
 ##
 ##
 
+>>> print_square(0)
+
+
 >>> print_square("Two")
 Traceback (most recent call last):
 	...
