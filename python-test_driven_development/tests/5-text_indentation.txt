@@ -1,0 +1,19 @@
+==================================
+The ``4. Text indentation`` module
+==================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(".")
+Valar morghulis
+
+>>> text_indentation("?")
+Valar dohaeris
+
+>>> text_indentation(":")
+Drakaris
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
