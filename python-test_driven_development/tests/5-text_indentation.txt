@@ -5,15 +5,24 @@ The ``4. Text indentation`` module
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 >>> text_indentation(".")
-Valar morghulis
+Valar
+
+morghulis
 
 >>> text_indentation("?")
-Valar dohaeris
+Valar
+
+dohaeris
 
 >>> text_indentation(":")
 Drakaris
+
+Drogon
 
 >>> text_indentation(5)
 Traceback (most recent call last):
 	...
 TypeError: text must be a string
+
+>>> text_indentation(" Leading spaces handled.")
+Leading spaces handled.
