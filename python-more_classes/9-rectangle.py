@@ -123,3 +123,9 @@ class Rectangle:
             raise ValueError("size must be >= 0")
 
         return cls(size, size)
+
+    try:
+        my_square = Rectangle.square(-2)
+        print("{} / {}".format(my_square.width, my_square.height))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
