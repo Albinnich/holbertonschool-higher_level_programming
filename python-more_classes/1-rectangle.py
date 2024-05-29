@@ -18,18 +18,39 @@ class Rectangle:
         self.width = width
         self.height = height
 
-        if width not isinstance(type, int):
+    @property
+    def width(self):
+        """
+        Getter for the private instance attribute width.
+        """
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        """
+        Setter for the private instance attribute width.
+        """
+
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
+        self._width = value
 
-        if height not isinstance(type, int):
+    @property
+    def height(self):
+        """
+        Getter for the private instance attribute height.
+        """
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        """
+        Setter for the private instance attribute height.
+        """
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-
-    def area(self):
-        return self.width*self.height
-
-
-print(area())
+        self._height = value
