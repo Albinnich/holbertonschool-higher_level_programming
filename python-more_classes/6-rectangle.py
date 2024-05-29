@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Module 5. Detect instance deletion
+Module 6. How many instances
 """
 
 
