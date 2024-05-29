@@ -22,7 +22,6 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-        self.print_symbol = Rectangle.print_symbol
 
     @property
     def width(self):
@@ -117,15 +116,4 @@ class Rectangle:
         """
         Returns a new Rectangle instance with width == height == size
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
         return cls(size, size)
-
-    try:
-        my_square = Rectangle.square(10)
-        print("{} / {}".format(my_square.width, my_square.height))
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
