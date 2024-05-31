@@ -24,10 +24,21 @@ print(my_list)
 >>> empty_list.print_sorted()
 []
 
->>> negative_list = MyList(-1, -4, -2, -3, -5)
+>>> negative_list = MyList()
+>>> negative_list.append(-1)
+>>> negative_list.append(-4)
+>>> negative_list.append(-2)
+>>> negative_list.append(-3)
+>>> negative_list.append(-5)
 >>> negative_list.print_sorted()
 [-5, -4, -3, -2, -1]
 
->>> mixed_list = MyList(3, -2, 5, 0, -1, 2)
+>>> mixed_list = MyList()
+>>> mixed_list.append(3)
+>>> mixed_list.append(-2)
+>>> mixed_list.append(5)
+>>> mixed_list.append(0)
+>>> mixed_list.append(-1)
+>>> mixed_list.append(2)
 >>> mixed_list.print_sorted()
 [-2, -1, 0, 2, 3, 5]
