@@ -2,6 +2,6 @@
 
 def lookup(obj):
     """
-    Function that returns list of available attributes and methods
+    Module that returns list of available attributes and methods
     """
     print(dir(obj))
