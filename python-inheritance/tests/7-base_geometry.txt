@@ -15,3 +15,8 @@ ValueError: age must be greater that 0
 Traceback (most recent call last):
 	...
 TypeError: name must be an integer
+
+>>> integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 1 required positional argument: name
