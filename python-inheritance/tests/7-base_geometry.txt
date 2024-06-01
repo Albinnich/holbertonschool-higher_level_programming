@@ -28,10 +28,10 @@ Traceback (most recent call last):
 	...
 TypeError: age must be an integer
 
->>> bg.integer_validator("age", True)
+>>> bg.integer_validator("name", True)
 Traceback (most recent call last):
 	...
-TypeError: age must be an integer
+TypeError: name must be an integer
 
 >>> bg.area()
 Traceback (most recent call last):
