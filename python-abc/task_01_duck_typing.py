@@ -4,7 +4,6 @@ from abc import ABC, abstractmethod
 import math
 
 class Shape(ABC):
-
     @abstractmethod
     def area(self):
         pass
@@ -15,12 +14,10 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, radius):
-        if radius < 0:
-            raise ValueError("Radius must not be negative")
         self.__radius = abs(radius)
 
     def area(self):
-        return math.pi * self.__radius ** 2
+        return math.pi * (self.__radius ** 2)
 
     def perimeter(self):
         return 2 * math.pi * self.__radius
