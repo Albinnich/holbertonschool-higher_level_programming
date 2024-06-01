@@ -11,10 +11,10 @@ Traceback (most recent call last):
 	...
 ValueError: age must be greater that 0
 
->>> integer_validator("name", "Albina")
+>>> integer_validator("age", "Albina")
 Traceback (most recent call last):
 	...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 >>> integer_validator()
 Traceback (most recent call last):
