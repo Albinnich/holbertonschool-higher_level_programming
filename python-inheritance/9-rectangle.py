@@ -26,6 +26,12 @@ class Rectangle(BaseGeometry):
         """Return the rectangle description."""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
+    def area(self):
+        """
+        Defines area
+        """
+        return self.__width * self.__height
+
 
 if __name__ == "__main__":
     r = Rectangle(3, 5)
