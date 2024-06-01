@@ -45,3 +45,4 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
 print(issubclass(Rectangle, BaseGeometry))
+print(dir(Rectangle))
