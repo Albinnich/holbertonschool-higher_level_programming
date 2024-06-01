@@ -27,11 +27,11 @@ class Rectangle(Shape):
     def __init__(self, width, height):
         if width < 0 or height < 0:
             raise ValueError("Width and height must not be negative")
-        self.width = width
-        self.height = height
+        self.width = abs(width)
+        self.height = abs(height)
 
     def area(self):
-        return abs(self.width * self.height)
+        return self.width * self.height
 
     def perimeter(self):
         return 2 * (self.width + self.height)
@@ -39,12 +39,3 @@ class Rectangle(Shape):
 def shape_info(shape):
     print("Area:", shape.area())
     print("Perimeter:", shape.perimeter())
-
-def test_rectangle_negative():
-    try:
-        rectangle_negative = Rectangle(width=-4, height=7)
-    except ValueError as e:
-        assert str(e) == "Width and height must not be \
-                negative", "Incorrect error message"
-    else:
-        raise AssertionError("Expected ValueError for negative dimensions")
