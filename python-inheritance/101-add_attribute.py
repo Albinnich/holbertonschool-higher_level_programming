@@ -9,7 +9,6 @@ def add_attribute(obj, attribute, value):
     """
     Function add_attribute adds new atribute to an object
     """
-    if hasattr(obj, attribute):
+    if not isinstance(obj, type):
         raise TypeError("can't add new attribute")
-    else:
-        setattr(obj, attribute, value)
+    setattr(obj, attribute, value)
