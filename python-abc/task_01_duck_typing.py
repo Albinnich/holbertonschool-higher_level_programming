@@ -27,10 +27,8 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        if width < 0 or height < 0:
-            raise ValueError("Width and height must not be negative")
-        self.__width = width
-        self.__height = height
+        self.__width = abs(width)
+        self.__height = abs(height)
 
     def area(self):
         return self.__width * self.__height
