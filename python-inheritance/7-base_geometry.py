@@ -4,6 +4,7 @@
     The ''7. Integer validator'' module
 """
 
+
 class BaseGeometry:
     """
     Class that defines area
