@@ -4,6 +4,8 @@
     The ''10. Square #1'' module
 """
 
+Rectangle = __import__('8-rectangle').Rectangle
+
 
 class Square:
     """
@@ -15,13 +17,14 @@ class Square:
         Initializes size
         """
 
-        super().__init__()
-        self.__size = 0
-        self.integer_validator("size", size)
-        self.__size = size
+        super().__init__(size, size)
+
+    def __str__(self):
+         """Return the square description."""
+         return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
 
     def area(self):
         """
         Defines area
         """
-        return self.__width * self.__height
+        return self._Rectangle__width * self._Rectangle__height
