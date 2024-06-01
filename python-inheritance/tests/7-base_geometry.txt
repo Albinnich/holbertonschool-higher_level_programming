@@ -6,7 +6,7 @@ The ''7. Integer validator'' module
 
 >>> integer_validator("age", 32)
 
->>> integer_validator("name", 0)
+>>> integer_validator("age", 0)
 Traceback (most recent call last):
 	...
 ValueError: age must be greater that 0
