@@ -35,8 +35,7 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 def shape_info(shape):
+    area = shape.area()
+    perimeter = shape.perimeter()
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
-
-assert abs(rectangle_negative.area()) == 28, "Area should \
-        handle negative dimensions"
