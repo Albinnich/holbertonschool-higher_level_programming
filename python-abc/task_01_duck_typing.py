@@ -39,3 +39,12 @@ class Rectangle(Shape):
 def shape_info(shape):
     print("Area:", shape.area())
     print("Perimeter:", shape.perimeter())
+
+def test_rectangle_negative():
+    try:
+        rectangle_negative = Rectangle(width=-4, height=7)
+    except ValueError as e:
+        assert str(e) == "Width and height must not be \
+                negative", "Incorrect error message"
+    else:
+        raise AssertionError("Expected ValueError for negative dimensions")
