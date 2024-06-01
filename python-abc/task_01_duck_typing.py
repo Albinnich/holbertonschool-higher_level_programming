@@ -17,7 +17,7 @@ class Circle(Shape):
         self.__radius = abs(radius)
 
     def area(self):
-        return math.pi * (self.__radius ** 2)
+        return math.pi * self.__radius ** 2
 
     def perimeter(self):
         return 2 * math.pi * self.__radius
@@ -27,8 +27,10 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        self.__width = abs(width)
-        self.__height = abs(height)
+        if width < 0 or height < 0:
+            raise ValueError("Width and height must not be negative")
+        self.__width = width
+        self.__height = height
 
     def area(self):
         return abs(self.__width * self.__height)
@@ -40,5 +42,5 @@ class Rectangle(Shape):
         return f"[Rectangle] {self.__width}/{self.__height}"
 
 def shape_info(shape):
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    print("Area:", shape.area())
+    print("Perimeter:", shape.perimeter())
