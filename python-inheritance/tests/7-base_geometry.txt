@@ -1,0 +1,17 @@
+===================================
+The ''7. Integer validator'' module
+===================================
+
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry
+
+>>> integer_validator("age", 32)
+
+>>> integer_validator("age", 0)
+Traceback (most recent call last):
+	...
+ValueError: name must be greater that 0
+
+>>> integer_validator("name", "Albina")
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
