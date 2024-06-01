@@ -14,32 +14,27 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, radius):
-        self.__radius = abs(radius)
+        self.radius = abs(radius)
 
     def area(self):
-        return math.pi * self.__radius ** 2
+        return math.pi * self.radius ** 2
 
     def perimeter(self):
-        return 2 * math.pi * self.__radius
+        return 2 * math.pi * self.radius
 
-    def __str__(self):
-        return f"[Circle] {self.__radius}"
 
 class Rectangle(Shape):
     def __init__(self, width, height):
         if width < 0 or height < 0:
             raise ValueError("Width and height must not be negative")
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
-        return abs(self.__width * self.__height)
+        return abs(self.width * self.height)
 
     def perimeter(self):
-        return 2 * (self.__width + self.__height)
-
-    def __str__(self):
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        return 2 * (self.width + self.height)
 
 def shape_info(shape):
     print("Area:", shape.area())
