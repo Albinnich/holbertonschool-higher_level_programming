@@ -17,26 +17,32 @@ class Circle(Shape):
     def __init__(self, radius):
         if radius < 0:
             raise ValueError("Radius must not be negative")
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
-        return math.pi * self.radius ** 2
+        return math.pi * self.__radius ** 2
 
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * self.__radius
+
+    def __str__(self):
+        return f"[Circle] {self.__radius}"
 
 class Rectangle(Shape):
     def __init__(self, width, height):
         if width < 0 or height < 0:
             raise ValueError("Width and height must not be negative")
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        return f"[Rectangle] {self.__width}/{self.__height}"
 
 def shape_info(shape):
     print(f"Area: {shape.area()}")
