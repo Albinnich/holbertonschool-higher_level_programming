@@ -4,10 +4,10 @@
     The ''10. Square #1'' module
 """
 
-Rectangle = __import__('8-rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square:
+class Square(Rectangle):
     """
     Class that inherits from Rectangle
     """
@@ -21,7 +21,8 @@ class Square:
 
     def __str__(self):
          """Return the square description."""
-         return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
+         return "[Square] {}/{}".format/
+     (self._Rectangle__width, self._Rectangle__height)
 
     def area(self):
         """
