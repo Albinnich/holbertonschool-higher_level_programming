@@ -25,14 +25,14 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        self.width = abs(width)
+        self.height = abs(height)
 
     def area(self):
-        return abs(self.width * self.height)
+        return self.width * self.height
 
     def perimeter(self):
-        return abs(2 * (self.width + self.height))
+        return 2 * (self.width + self.height)
 
 def shape_info(shape):
     print("Area:", shape.area())
