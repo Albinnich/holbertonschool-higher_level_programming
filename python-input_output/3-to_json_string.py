@@ -11,7 +11,4 @@ def to_json_string(my_obj):
     to_json_string function returns JSON representation of string
     """
 
-    if isinstance(my_obj, str):
-        return '"' + my_obj.replace('"', r'\"') + '"'
-    else:
-        return str(my_obj)
+    json_string = json.dumps(greetings)
