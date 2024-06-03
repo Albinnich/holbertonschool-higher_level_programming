@@ -10,6 +10,5 @@ def read_file(filename=""):
     read_file function reads text file
     """
 
-    with open(filename, encoding="utf-8") as f:
-        filename = f.read()
-        print(filename)
+    with open(filename, encoding="utf-8") as file:
+        print(file.read(), end="")
