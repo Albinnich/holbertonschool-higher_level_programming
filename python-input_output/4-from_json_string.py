@@ -11,4 +11,5 @@ def from_json_string(my_str):
     """
     from_json_string function returns object represented by JSON
     """
-    return json_load(my_str)
+    obj = json.loads(my_str):
+        return obj
