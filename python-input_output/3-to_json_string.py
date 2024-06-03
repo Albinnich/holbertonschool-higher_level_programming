@@ -11,5 +11,7 @@ def to_json_string(my_obj):
     to_json_string function returns JSON representation of string
     """
 
-    with open(my_obj, "w") as file:
-        json.dump(my_obj, file)
+    if isinstance(my_obj, str):
+        return '"' + my_obj.replace('"', r'\"') + '"'
+    else:
+        return str(my_obj)
