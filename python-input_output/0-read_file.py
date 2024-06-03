@@ -4,11 +4,12 @@
     The ''0. Read file'' module
 """
 
+
 def read_file(filename=""):
     """
     read_file function reads text file
     """
 
-    with open('"".txt') as f:
-        "" = f.read()
-        print("")
+    with open("file.txt", "r", encoding="utf-8") as f:
+        text = f.read()
+        print(text)
