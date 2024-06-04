@@ -10,6 +10,7 @@ def save_to_json_file(my_obj, filename):
     """
     save_to_json_file - function to write an object to text file
     """
+    my_list = list(my_obj)
 
     json_string = json.dumps(my_obj)
 
