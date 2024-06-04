@@ -11,9 +11,4 @@ def class_to_json(obj):
     """
     class_to_json function that returns dictionary description
     """
-
-    result = {}
-    for attr_name, attr_value in obj.__dict__.items():
-        if isinstance(attr_value, (list, dict, str, int, bool)):
-            result[attr_name] = attr_value
-    return result        
+    return obj.__dict__
