@@ -6,6 +6,9 @@ The ''12. Pascal's Triangle'' module
 
 
 def pascal_triangle(n):
+    """
+    pascal_triangle function returns list of lists integers
+    """
     if n <= 0:
         return []
 
