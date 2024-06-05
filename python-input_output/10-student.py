@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-The ''9. Student to JSON'' module
+The ''10. Student to JSON with filter'' module
 """
 
 
@@ -17,8 +17,9 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
         Retrieves a dictionary representation of the Student instance
         """
-        return self.__dict__
+        if attrs is str:
+            return self.__dict__
