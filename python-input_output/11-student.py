@@ -3,9 +3,6 @@
 The ''11. Student to disk and reload'' module
 """
 
-import os
-import json
-
 
 class Student:
     """
