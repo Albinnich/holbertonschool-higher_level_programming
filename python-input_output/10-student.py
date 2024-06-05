@@ -21,5 +21,4 @@ class Student:
         """
         Retrieves a dictionary representation of the Student instance
         """
-        if attrs is str:
-            return self.__dict__
+        return self.__dict__
