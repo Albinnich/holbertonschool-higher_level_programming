@@ -21,4 +21,7 @@ class Student:
         """
         Retrieves a dictionary representation of the Student instance
         """
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        else:
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
