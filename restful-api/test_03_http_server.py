@@ -29,4 +29,3 @@ if __name__ == "__main__":
     test_data_endpoint()
     test_status_endpoint()
     test_undefined_endpoint()
-
