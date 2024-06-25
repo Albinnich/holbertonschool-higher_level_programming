@@ -1,10 +1,10 @@
 -- Script that lists all cities contained in the database hbtn_0d_usa.
 -- Each record should display: cities.id - cities.name - states.name
 
-SELECT id FROM cities;
+SELECT cities.id, cities.name, (
+	SELECT name FROM states WHERE id = cities.state_id
+) AS state_name
 
-SELECT name FROM cities;
+FROM cities
 
-SELECT name FROM states;
-
-ORDER BY id ASC;
+ORDER BY cities.id ASC;
