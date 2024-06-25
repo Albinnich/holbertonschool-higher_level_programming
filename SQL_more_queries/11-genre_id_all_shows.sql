@@ -1,9 +1,9 @@
 -- Script that lists all shows contained in the database hbtn_0d_tvshows.
 -- If a show doesn’t have a genre, display NULL
 
-SELECT DISTINCT
+SELECT
     tv_shows.title,
-    COALESCE(tv_show_genres.genre_id, 'NULL') AS genre_id
+    IFNULL(tv_show_genres.genre_id, 'NULL') AS genre_id
 FROM
     tv_shows
 LEFT JOIN
