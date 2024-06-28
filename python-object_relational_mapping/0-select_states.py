@@ -1,27 +1,27 @@
 #!/usr/bin/python3
 """
-    The `Get all states` module
+This script connects to a MySQL database and selects all the rows from the 'states' table.
 """
-import MySQLdb
-import sqlalchemy
+
 import sys
+import MySQLdb as mysql
 
 if __name__ == "__main__":
-    argv = sys.argv
-    user = argv[1]
-    passwd = argv[2]
-    db = argv[3]
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
 
-    conn = MySQLdb.connect(host="localhost",
-                           port=3306,
-                           user=user,
-                           passwd=passwd,
-                           db=db,
-                           charset="utf8")
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+    db = mysql.connect(
+        host="localhost",
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name
+    )
+
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    result = cursor.fetchall()
+
+    for x in result:
+        print(x)
