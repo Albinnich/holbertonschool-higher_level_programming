@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script connects to a MySQL database and selects all the rows from the 'states' table.
+The "0. Get all states" module
 """
 
 import sys
