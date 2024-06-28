@@ -1,30 +1,34 @@
 #!/usr/bin/python3
-"""
-    The `Filter states` module
-"""
+import sys
 import MySQLdb
-import sqlalchemy
-from sys import argv
 
 if __name__ == "__main__":
-    user = argv[1]
-    passwd = argv[2]
-    db = argv[3]
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
+    
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    conn = MySQLdb.connect(host="localhost",
-                           port=3306,
-                           user=user,
-                           passwd=passwd,
-                           db=db,
-                           charset="utf8")
-    cur = conn.cursor()
-    cur.execute("""
-                    SELECT * FROM states
-                    WHERE name LIKE BINARY 'N%'
-                    ORDER BY id ASC
-                """)
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+    # Connect to MySQL
+    try:
+        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        cursor = db.cursor()
+
+        # Execute filtered query
+        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+        cursor.execute(query)
+        results = cursor.fetchall()
+
+        # Print results
+        for row in results:
+            print(row)
+
+        # Close cursor and connection
+        cursor.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+        sys.exit(1)
