@@ -1,27 +1,30 @@
 #!/usr/bin/python3
-"""
-    The `Get all states` module
-"""
 
 import sys
-import MySQLdb as mysql
+import MySQLdb
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    if len(sys.argv) != 4:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
 
-    db = mysql.connect(
-            host="localhost",
-            port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=database_name
-    )
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    result = cursor.fetchall()
+    try:
+        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        cursor = db.cursor()
 
-    for x in result:
-        print(x)
+        cursor.execute("SELECT * FROM states ORDER BY id ASC")
+        results = cursor.fetchall()
+
+        for row in results:
+            print(row)
+
+        cursor.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+        sys.exit(1)
