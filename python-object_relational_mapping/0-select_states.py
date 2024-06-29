@@ -4,14 +4,14 @@ The "0. Get all states" module
 """
 
 import sys
-import MySQLdb as mysql
+import MySQLdb
 
 if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    db = mysql.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
@@ -19,9 +19,11 @@ if __name__ == "__main__":
         db=database_name
     )
 
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    result = cursor.fetchall()
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    result = cur.fetchall()
 
     for x in result:
         print(x)
+    cur.close()
+    db.close()
