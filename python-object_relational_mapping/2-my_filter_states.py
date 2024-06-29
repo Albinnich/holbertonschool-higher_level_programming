@@ -2,6 +2,7 @@
 """
 The "2. Filter states by user input" module
 """
+
 import MySQLdb
 import sys
 
