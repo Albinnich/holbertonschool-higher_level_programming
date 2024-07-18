@@ -26,9 +26,6 @@ def read_sql():
     products = cursor.fetchall()
     conn.close()
     return [{"id": row[0], "name": row[1], "category": row[2], "price": row[3]} for row in products]
-    products = cursor.fetchall()
-    conn.close()
-    return [{"id": row[0], "name": row[1], "category": row[2], "price": row[3]} for row in products]
 
 @app.route('/')
 def home():
@@ -58,6 +55,12 @@ def products():
         products = read_json()
     elif source == 'csv':
         products = read_csv()
+    elif source == 'sql':
+        try:
+            products = read_sql()
+        except sqlite3.Error as e:
+            error = f"Database error: {e}"
+            products = []
     else:
         error = "Wrong source"
         return render_template('product_display.html', error=error)
